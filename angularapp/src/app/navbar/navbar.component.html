@@ -1,0 +1,10 @@
+<div class="main-container">
+  <button class="add-button">Add project</button>
+    <div class="project-list" [class.hovered] = "isHovered">
+        <ul>
+          <li *ngFor="let project of projectList"
+          [class.selected]="project == selectedProject"
+          (click)="selectProject(project)">{{ project.name }}</li>
+        </ul>
+    </div>
+</div>

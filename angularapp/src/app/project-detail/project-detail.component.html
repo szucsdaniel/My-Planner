@@ -1,0 +1,19 @@
+<div class="project-detail">
+    <section class="project">
+        <h1 class="project-name">{{selectedProject?.name}}</h1>
+        <p>{{selectedProject?.description}}</p>
+    </section>
+    <h2 class="branch-title">Branches</h2>
+    <section class="branch-list" appDragScrollList [gapInPx] = 10>
+        <div class="branch" [class.selected-branch]="branch.id == this.selectedBranch?.id"
+        *ngFor="let branch of selectedProject?.branches" >
+            <h4 class="branch-name">{{branch.name}}</h4>
+        </div>
+    </section>
+    <section class="line-section">
+        <div *ngIf="this.selectedBranch" class="line-start"></div>
+    </section>
+    <section class="subtask-list">
+        <app-branch-detail></app-branch-detail>
+    </section>
+</div>

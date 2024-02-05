@@ -1,0 +1,17 @@
+<div class="branch-detail-container">
+    <div class="line"></div>
+    
+    <div *ngIf="branch != null">
+        <div *ngFor="let subtask of subtasks" class="subtask-list">
+            <div class="subtask">
+                <div class="dot"></div>
+                <div class="subtask-date">{{subtask.deadline}}</div>
+                <div class="subtask-content">
+                    <h4>{{subtask.name}}</h4>
+                    <p>assignee list</p>
+                </div>
+            </div>
+            <p></p>
+        </div>
+    </div>
+</div>

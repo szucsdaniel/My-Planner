@@ -1,0 +1,58 @@
+.main-container{
+    margin-right: 1px;
+    justify-content: space-between;
+    height: 92%;
+}
+.project-list {
+    overflow-y: scroll;
+    background:white;
+    display: fixed;
+    height: 94%;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    padding: 40px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 8%;
+    background: #541d2150;
+  }
+
+  .project-list li.selected {
+    background: #202731;
+    color: rgb(255, 255, 255);
+  }
+  li:hover {
+    background-color: #ddd;
+  }
+.project-list::-webkit-scrollbar{
+    width: 0px;
+}
+.project-list::-webkit-scrollbar-thumb{
+    background:#535e6d;
+    border-radius: 10px;
+
+}
+.project-list.hovered::-webkit-scrollbar{
+    width: 10px;
+}
+.add-button{
+  margin:0;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  display:fixed;
+  width: 100%;
+  align-content: start;
+  font-family: "Montserrat", sans-serif;
+  background:#86868984;
+  margin-bottom: 1%;
+  border-radius: 10px;
+}
