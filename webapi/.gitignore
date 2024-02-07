@@ -1,0 +1,17 @@
+.vs/
+bin/
+obj/
+
+*.nupkg
+*.snupkg
+
+*.suo
+*.user
+*.sln.docstates
+*.csproj.user
+
+*.dll
+*.exe
+
+node_modules/
+packages/
