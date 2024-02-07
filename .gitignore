@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/angularapp/.angular/cache/15.2.10/angular-webpack
