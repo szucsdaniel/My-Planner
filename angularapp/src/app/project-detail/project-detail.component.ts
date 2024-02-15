@@ -36,4 +36,11 @@ export class ProjectDetailComponent {
       }
     })
   }
+  getAssigneeNames(project:ProjectDetail): string{
+    let names  = "";
+    project.assignees?.forEach((assignee)=> names += `${assignee.name}, `);
+    names = names.substring(0, names.length-2);
+
+    return names;
+  }
 }

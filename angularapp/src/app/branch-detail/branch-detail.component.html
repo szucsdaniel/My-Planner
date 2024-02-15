@@ -1,14 +1,42 @@
 <div *ngIf="subtasks != null" class="branch-detail-container">
+    <div class="branch-buttons">
+        <button class="branch-button" type="button" onclick="productEdit(this);">
+            <i class="glyphicon glyphicon-pencil branch-button-font"> Edit Branch</i>
+        </button>
+        <button class="branch-button" type="button" onclick="productDelete(this);">
+            <i class="glyphicon glyphicon-remove branch-button-font"> Delete Branch</i>
+        </button>
+        <button class="add-subtask-button" type="button" onclick="productDelete(this);">
+            <i class="glyphicon glyphicon-plus branch-button-font"> Add Subtask</i>
+        </button>
+    </div>
     <div class="line"></div>
-    <div *ngFor="let subtask of subtasks" class="subtask-list">
-        <div class="subtask">
-            <div class="dot"></div>
-            <div class="subtask-date">{{subtask.deadline}}</div>
-            <div class="subtask-content">
-                <h4>{{subtask.name}}</h4>
-                <p>assignee list</p>
+    <div class="subtask-list">
+        <div *ngFor="let subtask of subtasks" >
+            <div class="subtask" (click)="clickSubtask(subtask)" >
+                <div class="dot"></div>
+                <div class="subtask-details">
+                    <h4 class="subtask-date">{{subtask.deadline}}</h4>
+                    <div class="subtask-name" [style.color]="this.statusColor[subtask.status]">
+                        <h4>{{subtask.name}}</h4>
+                    </div>
+                    <div class="details" *ngIf="this.clickedSubtasks.includes(subtask)">
+                        <div>
+                            <p>Current status: <span [style.color]="this.statusColor[subtask.status]">{{this.statusName[subtask.status]}}</span></p>
+                            <p class="assignee-list">List of assignees: {{getAssigneeNames(subtask)}}</p>
+                        </div>
+                        
+                        <div class="subtask-buttons">
+                            <button class="edit-subtask-button" type="button" onclick="productEdit(this);">
+                                <i class="glyphicon glyphicon-pencil"> Edit Subtask</i>
+                            </button>
+                            <button class="delete-subtask-button" type="button" onclick="productDelete(this);">
+                                <i class="glyphicon glyphicon-remove"> Delete Subtask</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <p></p>
     </div>
 </div>

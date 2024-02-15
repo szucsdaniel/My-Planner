@@ -14,11 +14,17 @@ export interface FormattedSubtaskList{
     id: number,
     name: string,
     deadline: string,
-    status: Status
+    status: Status,
+    assignees: Assignee[] | null
 }
 export enum Status{
     WAITING, IN_PROGRESS, FINISHED
 }
+export const StatusColors = {
+    [Status.WAITING]: 'red',
+    [Status.IN_PROGRESS]: 'blue',
+    [Status.FINISHED]: 'grey'
+};
 export interface BranchPostDTO{
     id: number,
     name: string,
@@ -27,4 +33,8 @@ export interface BranchPostDTO{
 export interface BranchPutDTO{
     id: number,
     name: string,
+}
+export interface Assignee{
+    id: number,
+    name: string
 }

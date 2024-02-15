@@ -21,7 +21,8 @@ export class DragScrollListDirective{
 
   @Input() gapInPx: number = 0;
 
-  constructor(private el:ElementRef, private renderer: Renderer2
+  constructor(private el:ElementRef
+      , private renderer: Renderer2
       , private selectedProjectService: UpdateSelectedProjectService
       , private selectedBranchService: UpdateSelectedBranchService
       , private projectService: ProjectServiceService){

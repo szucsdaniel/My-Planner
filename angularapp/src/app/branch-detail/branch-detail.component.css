@@ -9,18 +9,135 @@
     flex-direction:row;
     min-height: 30vh;
 }
+.branch-buttons{
+    display: flex;
+    flex-direction: column;
+    margin-top:2%;
+    margin-left:1%;
+    padding:0;
+    margin-right: 0;
+    width:6%;
+}
+.branch-button{
+    margin-bottom: 10%;
+    background-color: burlywood;
+    color:#202731;
+    border:none;
+    border-radius: 5px;
+}
+.branch-button:hover{
+    background-color:#767f8a;
+    color:white;
+}
+.add-subtask-button{
+    margin-bottom: 10%;
+    background-color:#202731;
+    color:white;
+    border:none;
+    border-radius: 5px;
+}
+.add-subtask-button:hover{
+    background-color:#767f8a;
+}
+.glyphicon {
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+}
+.branch-button-font{
+    font-size:medium;
+}
+.glyphicon-pencil:before {
+    content: "\270f";
+}
+
+.glyphicon-remove:before {
+    content: "\2715";
+}
+.glyphicon-plus:before {
+    content: "\002B";
+}
 .subtask-list{
     flex:1;
-    margin-top: 6%;
-    max-width: 50%;
     color:white;
     display:flex;
     flex-direction: column;
     min-width:fit-content;
+    max-width:fit-content;
 }
 .subtask{
+    margin-top: 6%;
+    margin-bottom: 2%;
+    display:flex;
+    flex-direction: row;
+    animation: moveleft 300ms linear;
+    margin-right: 0;
+    padding-right: 0;
+}
+.subtask:hover {
+    .dot{
+        border-right: 15px solid #58616d;
+    }
+    .subtask-details{
+        .subtask-name{
+            background: #58616d;
+        }
+        .details{
+            background: #58616d;
+        }
+    }
+}
+
+.subtask-details{
+    min-width: 20%;
+    min-height: 8%;
+    display:flex;
+    flex-direction: column;
+}
+.subtask-name{
+    padding:5%;
     min-width: 40vh;
+    min-height: 6vh;
     background: #202731;
+}
+.subtask-date{
+    margin-bottom:0;
+    color:#202731;
+}
+.dot{
+    height: 1vh;
+    border-right: 15px solid #202731;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    margin-top: 4vh;
+}
+.details{
+    margin-top:1px;
+    background-color: #202731;
+    padding: 10%;
+}
+.subtask-buttons{
+    margin-top:4%;
+}
+.edit-subtask-button{
+    border:0;
+    margin-right: 2%;
+    padding: 1%;
+    min-width: fit-content;
+    background: #d4d4dd84;
+    color:white;
+}
+.edit-subtask-button:hover{
+    color:#202731;
+}
+.delete-subtask-button{
+    border:0;
+    padding: 1%;
+    min-width: fit-content;
+    background: #d4d4dd84;
+    color:white;
+}
+.delete-subtask-button:hover{
+    color:#202731;
 }
 .line{
     flex:1;
@@ -28,6 +145,20 @@
     min-height:100%;
     /*background-color: #202731;*/
     background-color: burlywood;
-    margin-left:8%;
+    margin-left:1%;
     margin-right:0;
+}
+.red{
+    color:rgb(78, 130, 189)
+}
+
+@keyframes moveleft{
+    0%{
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }

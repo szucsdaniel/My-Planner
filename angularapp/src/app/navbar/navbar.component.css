@@ -56,3 +56,7 @@
   margin-bottom: 1%;
   border-radius: 10px;
 }
+.add-button:hover{
+  background: #202731;
+  color:white;
+}

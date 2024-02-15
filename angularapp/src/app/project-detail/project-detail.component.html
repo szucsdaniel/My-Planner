@@ -1,16 +1,30 @@
 <div class="project-detail">
-    <section class="project">
-        <h1 class="project-name">{{selectedProject?.name}}</h1>
-        <p>{{selectedProject?.description}}</p>
+    <section *ngIf="selectedProject" class="project">
+        <h1 class="project-name">{{selectedProject.name}}</h1>
+        <p class="project-description">{{selectedProject.description}}</p>
+        <p class="project-assignees">Assignees: {{getAssigneeNames(selectedProject)}}</p>
     </section>
-    <h2 class="branch-title">Branches</h2>
-    <section class="branch-list" appDragScrollList [gapInPx] = 10>
+    <section class="title-and-edit">
+        <div class="branch-title">
+            <h2>Branches</h2>
+            <button type="button" class="add-branch-button" onclick="productAddToTable();">Add Branch</button>
+        </div>
+        <div class="project-buttons">
+            <button class="project-button" type="button" onclick="productEdit(this);">
+                <i class="glyphicon glyphicon-pencil"> Edit Project</i>
+            </button>
+            <button class="project-button" type="button" onclick="productDelete(this);">
+                <i class="glyphicon glyphicon-remove"> Delete Project</i>
+            </button>
+        </div>
+    </section>
+    <section *ngIf="selectedProject?.branches?.length  !=0" class="branch-list" appDragScrollList [gapInPx] = 10>
         <div class="branch" [class.selected-branch]="branch.id == this.selectedBranch?.id"
         *ngFor="let branch of selectedProject?.branches" >
             <h4 class="branch-name">{{branch.name}}</h4>
         </div>
     </section>
-    <section class="line-section">
+    <section *ngIf="selectedProject?.branches?.length !=0" class="line-section">
         <div *ngIf="this.selectedBranch" class="line-start"></div>
     </section>
     <section class="subtask-list">

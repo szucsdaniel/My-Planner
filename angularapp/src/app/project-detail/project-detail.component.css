@@ -11,16 +11,42 @@
     position:relative;
     display: flex;
     flex-direction: column;
-    align-items:center;
-    min-height: 200px;
     height:fit-content;
-    padding: 10% 20%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
     background: #202731;
     color: white;
 }
 .project-name{
+    align-self:center;
     font-weight: bolder;
     font-size:xx-large;
+}
+.title-and-edit{
+    display:flex;
+    flex-direction: row;
+}
+.project-buttons{
+    margin-left: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.project-button{
+    align-self: center;
+    font-size: large;
+    font-weight:normal;
+    font-family: "Montserrat", sans-serif;
+    background:#202731;
+    color:white;
+    margin-bottom: 10%;
+    border-radius: 5px;
+    border:none;
+}
+.project-button:hover{
+    background:white;
+    color:#202731;
 }
 .branch-title{
     background:#d4d4dd84;
@@ -29,7 +55,26 @@
     padding: 2%;
     border-top-right-radius: 40px;
     padding-bottom: 3%;
-    width:20%;
+    padding-right:1%;
+    min-width:20%;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1px;
+}
+.add-branch-button{
+    margin-left:20%;
+    margin-top: 5%;
+    padding:3%;
+    height: fit-content;
+    border-radius: 10px;
+    background:#d4d4dd84;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    margin-right: 10%;
+}
+.add-branch-button:hover{
+    background:#e8e8f184;
 }
 .branch-list{
     display:grid;
@@ -55,6 +100,8 @@
     border-radius: 100px;
     user-select: none;
     background: #202731;
+    display:flex;
+    flex-direction: row;
 }
 .selected-branch{
     background-color: burlywood;
@@ -77,3 +124,4 @@
     background-color: white;
     flex:1;
 }
+
